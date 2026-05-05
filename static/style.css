@@ -1,0 +1,39 @@
+body {
+    background: #121212;
+    color: white;
+    text-align: center;
+    font-family: Arial;
+}
+
+.controls {
+    margin: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.delete {
+    background: red;
+    color: white;
+    border: none;
+}
+
+.video img {
+    border-radius: 10px;
+    border: 3px solid white;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 150px;
+    border-radius: 5px;
+}

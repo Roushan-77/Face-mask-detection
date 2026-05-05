@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mask Detection</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Face Mask Detection System</h1>
+    <div class="controls">
+      <a href="/start"><button>Start Camera</button></a>
+      <a href="/stop"><button>Stop Camera</button></a>
+      <a href="/delete"><button class="delete">Delete Data</button></a>
+    </div>
+
+    <div class="video">
+      <img src="{{ url_for('video') }}" width="600" />
+    </div>
+
+    <div class="controls">
+      <button onclick="toggleStats()">Get Data</button>
+      <button onclick="toggleGallery()">Show Violations</button>
+    </div>
+
+    <div id="stats" style="display: none">
+      <p>Total: {{ total }}</p>
+      <p>Mask: {{ mask }}</p>
+      <p>No Mask: {{ no_mask }}</p>
+    </div>
+
+    <div id="gallery" class="gallery" style="display: none">
+      {% for img in images %}
+      <img src="/violations/{{ img }}?t={{ loop.index }}" />
+      {% endfor %}
+    </div>
+  </body>
+  <script>
+      function toggleStats() {
+        let s = document.getElementById("stats");
+        s.style.display = s.style.display === "none" ? "block" : "none";
+      }
+
+      function toggleGallery() {
+        let g = document.getElementById("gallery");
+        g.style.display = g.style.display === "none" ? "flex" : "none";
+      }
+    </script>
+</html>

@@ -16,7 +16,8 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_fronta
 if not os.path.exists("violations"):
     os.makedirs("violations")
 
-cap = cv2.VideoCapture(0)
+cam_index = 0
+cap = cv2.VideoCapture(cam_index)
 
 camera_active = False
 
@@ -115,6 +116,17 @@ def index():
     images = os.listdir("violations")
     return render_template("dashboard.html", images=images, total=total_faces, mask=mask_count, no_mask=no_mask_count)
 
+
+@app.route('/cam/<int:cam_id>')
+def switch_camera(cam_id):
+    global cap, cam_index
+    try:
+        cap.release()
+        cam_index = cam_id
+        cap = cv2.VideoCapture(cam_index)
+    except:
+        print("Camera switch failed")
+    return redirect(url_for('index'))
 
 @app.route('/violations/<filename>')
 def violations_file(filename):

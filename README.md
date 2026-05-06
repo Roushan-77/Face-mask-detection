@@ -2,6 +2,11 @@
 
 This project is a real-time face mask detection system built using deep learning and computer vision techniques. It detects whether a person is wearing a mask or not using a live camera feed and displays the results through a web-based dashboard.
 
+## Preview
+<p align="center">
+  <img src="demo_pics/Screenshot 2026-05-06 070017.png" />
+</p>
+
 ## Features
 
 - Real-time face detection and mask classification  
@@ -120,11 +125,6 @@ The model achieves high accuracy with stable performance. Training and validatio
 <p align="center">
   <img src="graphs/accuracy.png" width="45%" />
   <img src="graphs/loss.png" width="45%" />
-</p>
-
-### Dashboard
-<p align="center">
-  <img src="demo_pics/Screenshot 2026-05-06 070017.png" width="45%" />
 </p>
 
 ## Notes

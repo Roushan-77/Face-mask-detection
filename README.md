@@ -57,6 +57,9 @@ face-mask-project/
 ├── static/
 ├── templates/
 ├── violations/
+│
+├── demo_pics/
+
 ```
 
 

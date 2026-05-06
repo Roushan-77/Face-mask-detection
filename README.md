@@ -115,10 +115,16 @@ python app.py
 
 ## Results
 
+### Model
 The model achieves high accuracy with stable performance. Training and validation graphs are available in the `graphs/` directory.
 <p align="center">
   <img src="graphs/accuracy.png" width="45%" />
   <img src="graphs/loss.png" width="45%" />
+</p>
+
+### Dashboard
+<p align="center">
+  <img src="demo_pics/Screenshot 2026-05-06 070017.png" width="45%" />
 </p>
 
 ## Notes
